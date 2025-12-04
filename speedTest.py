@@ -17,6 +17,6 @@ def speedTest(func):
 	print("Average time (ms): " + str(round(sum(times) / len(times) * 1000, 2)))
 
 # speedTest(A01)
-# speedTest(A02)
-speedTest(B01)
-speedTest(B02)
+speedTest(A02)
+# speedTest(B01)
+# speedTest(B02)

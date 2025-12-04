@@ -11,15 +11,15 @@ def main():
 	zeroes = 0
 	for line in lines:
 		if(line[0] == "L"):
-			for _ in range(int(line[1:])):
-				pos -= 1
-				pos %= 100
-				if(pos == 0):
-					zeroes += 1
+			zeroes += abs((pos - int(line[1:])) // 100)
+			if(pos == 0):
+				zeroes -= 1
+			pos -= int(line[1:])
+			pos %= 100
+			if(pos == 0):
+				zeroes += 1
 		elif(line[0] == "R"):
-			for _ in range(int(line[1:])):
-				pos += 1
-				pos %= 100
-				if(pos == 0):
-					zeroes += 1
+			zeroes += (pos + int(line[1:])) // 100
+			pos += int(line[1:])
+			pos %= 100
 	return zeroes
